@@ -1,0 +1,16 @@
+{
+  "name": "TR3C3 Ecosystem",
+  "short_name": "TR3C3",
+  "description": "Premium Productivity & AI Growth Tools",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#f5c400",
+  "icons": [
+    {
+      "src": "logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
