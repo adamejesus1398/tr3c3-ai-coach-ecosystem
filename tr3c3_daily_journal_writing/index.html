@@ -91,22 +91,23 @@
             <div class="flex justify-between items-center mb-4">
                 <div>
                     <p class="text-[10px] uppercase tracking-widest text-primary/50 font-bold">Fecha de hoy</p>
-                    <h2 class="text-xl font-bold">Viernes, 24 de Mayo</h2>
+                    <h2 id="current-date-header" class="text-xl font-bold">Cargando fecha...</h2>
                 </div>
                 <div class="material-icons text-primary/40">calendar_today</div>
             </div>
             <p class="text-xs uppercase tracking-[0.2em] text-primary/60 mb-3 font-semibold">Estado de Ánimo</p>
-            <div class="flex justify-between items-center bg-black/40 p-3 rounded-lg border border-primary/5">
-                <button
-                    class="text-2xl grayscale hover:grayscale-0 transition-all focus:grayscale-0 focus:scale-125 transform">😔</button>
-                <button
-                    class="text-2xl grayscale hover:grayscale-0 transition-all focus:grayscale-0 focus:scale-125 transform">😐</button>
-                <button
-                    class="text-2xl hover:scale-125 transition-all transform drop-shadow-[0_0_8px_rgba(245,196,0,0.4)]">🙂</button>
-                <button
-                    class="text-2xl grayscale hover:grayscale-0 transition-all focus:grayscale-0 focus:scale-125 transform">🤩</button>
-                <button
-                    class="text-2xl grayscale hover:grayscale-0 transition-all focus:grayscale-0 focus:scale-125 transform">🔥</button>
+            <div id="mood-selector"
+                class="flex justify-between items-center bg-black/40 p-3 rounded-lg border border-primary/5">
+                <button data-mood="sad"
+                    class="text-2xl grayscale hover:grayscale-0 transition-all active:scale-125 transform">😔</button>
+                <button data-mood="neutral"
+                    class="text-2xl grayscale hover:grayscale-0 transition-all active:scale-125 transform">😐</button>
+                <button data-mood="happy"
+                    class="text-2xl grayscale hover:grayscale-0 transition-all active:scale-125 transform">🙂</button>
+                <button data-mood="excited"
+                    class="text-2xl grayscale hover:grayscale-0 transition-all active:scale-125 transform">🤩</button>
+                <button data-mood="on-fire"
+                    class="text-2xl grayscale hover:grayscale-0 transition-all active:scale-125 transform">🔥</button>
             </div>
         </section>
         <!-- Card: Gratitude (New) -->
@@ -116,17 +117,17 @@
             <div class="space-y-3">
                 <div class="flex items-center gap-3">
                     <span class="text-primary font-bebas text-lg">1.</span>
-                    <input type="text" placeholder="Agradezco hoy por..."
+                    <input id="gratitude-1" type="text" placeholder="Agradezco hoy por..."
                         class="w-full bg-black/40 border border-primary/10 rounded-lg text-sm p-2 focus:border-primary/40 focus:ring-0 outline-none">
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-primary font-bebas text-lg">2.</span>
-                    <input type="text" placeholder="Agradezco hoy por..."
+                    <input id="gratitude-2" type="text" placeholder="Agradezco hoy por..."
                         class="w-full bg-black/40 border border-primary/10 rounded-lg text-sm p-2 focus:border-primary/40 focus:ring-0 outline-none">
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-primary font-bebas text-lg">3.</span>
-                    <input type="text" placeholder="Agradezco hoy por..."
+                    <input id="gratitude-3" type="text" placeholder="Agradezco hoy por..."
                         class="w-full bg-black/40 border border-primary/10 rounded-lg text-sm p-2 focus:border-primary/40 focus:ring-0 outline-none">
                 </div>
             </div>
@@ -137,19 +138,19 @@
             <div class="space-y-4">
                 <div>
                     <label class="heading-font text-lg leading-none block">Acción</label>
-                    <input
+                    <input id="need-action"
                         class="w-full bg-black/10 border-b border-black/20 focus:border-black focus:ring-0 text-sm font-medium p-1 placeholder:text-black/40"
                         placeholder="Ej: Entrenar 30 min" type="text" />
                 </div>
                 <div>
                     <label class="heading-font text-lg leading-none block">Actitud</label>
-                    <input
+                    <input id="need-attitude"
                         class="w-full bg-black/10 border-b border-black/20 focus:border-black focus:ring-0 text-sm font-medium p-1 placeholder:text-black/40"
                         placeholder="Ej: Paciencia con el bebé" type="text" />
                 </div>
                 <div>
                     <label class="heading-font text-lg leading-none block">Pensamiento</label>
-                    <input
+                    <input id="need-thought"
                         class="w-full bg-black/10 border-b border-black/20 focus:border-black focus:ring-0 text-sm font-medium p-1 placeholder:text-black/40"
                         placeholder="Ej: Soy capaz de lograrlo" type="text" />
                 </div>
@@ -162,7 +163,7 @@
                 <div>
                     <label class="text-[10px] uppercase tracking-widest text-primary/60 font-bold block mb-1">General
                         del Día</label>
-                    <textarea
+                    <textarea id="summary-general"
                         class="w-full bg-black/40 border border-primary/10 rounded-lg text-sm p-3 focus:border-primary/40 focus:ring-0 outline-none"
                         placeholder="¿Cómo fue tu turno de noche?" rows="2"></textarea>
                 </div>
@@ -170,14 +171,14 @@
                     <div>
                         <label
                             class="text-[10px] uppercase tracking-widest text-green-500/60 font-bold block mb-1">Positivos</label>
-                        <textarea
+                        <textarea id="summary-positive"
                             class="w-full bg-black/40 border border-green-500/10 rounded-lg text-sm p-3 focus:border-green-500/40 focus:ring-0 outline-none"
                             placeholder="Lo bueno..." rows="2"></textarea>
                     </div>
                     <div>
                         <label
                             class="text-[10px] uppercase tracking-widest text-red-500/60 font-bold block mb-1">Negativos</label>
-                        <textarea
+                        <textarea id="summary-negative"
                             class="w-full bg-black/40 border border-red-500/10 rounded-lg text-sm p-3 focus:border-red-500/40 focus:ring-0 outline-none"
                             placeholder="Lo malo..." rows="2"></textarea>
                     </div>
@@ -185,14 +186,14 @@
                 <div>
                     <label class="text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">Victoria del
                         Día</label>
-                    <input
+                    <input id="summary-victory"
                         class="w-full bg-black/40 border border-primary/30 rounded-lg text-sm p-3 focus:border-primary focus:ring-0 outline-none"
                         placeholder="¿Qué ganaste hoy?" type="text" />
                 </div>
                 <div>
                     <label class="text-[10px] uppercase tracking-widest text-primary/60 font-bold block mb-1">Acciones
                         para Mañana</label>
-                    <textarea
+                    <textarea id="summary-tomorrow"
                         class="w-full bg-black/40 border border-primary/10 rounded-lg text-sm p-3 focus:border-primary/40 focus:ring-0 outline-none"
                         placeholder="Próximos pasos inmediatos..." rows="2"></textarea>
                 </div>
@@ -206,27 +207,27 @@
                     <span class="material-icons text-xl">add</span>
                 </button>
             </div>
-            <ul class="space-y-3">
+            <ul id="objectives-list" class="space-y-3">
                 <li class="flex items-center gap-3 bg-black/30 p-3 rounded-lg border border-primary/5 group">
-                    <input checked=""
+                    <input data-id="obj-1"
                         class="w-5 h-5 rounded border-primary/30 bg-black text-primary focus:ring-offset-black focus:ring-primary"
                         type="checkbox" />
-                    <span class="text-sm line-through opacity-50">Meditación de 10 min</span>
+                    <span class="text-sm">Meditación de 10 min</span>
                 </li>
                 <li class="flex items-center gap-3 bg-black/30 p-3 rounded-lg border border-primary/5">
-                    <input
+                    <input data-id="obj-2"
                         class="w-5 h-5 rounded border-primary/30 bg-black text-primary focus:ring-offset-black focus:ring-primary"
                         type="checkbox" />
                     <span class="text-sm">Lectura Espiritual</span>
                 </li>
                 <li class="flex items-center gap-3 bg-black/30 p-3 rounded-lg border border-primary/5">
-                    <input
+                    <input data-id="obj-3"
                         class="w-5 h-5 rounded border-primary/30 bg-black text-primary focus:ring-offset-black focus:ring-primary"
                         type="checkbox" />
                     <span class="text-sm">Revisión de Finanzas</span>
                 </li>
                 <li class="flex items-center gap-3 bg-black/30 p-3 rounded-lg border border-primary/5">
-                    <input
+                    <input data-id="obj-4"
                         class="w-5 h-5 rounded border-primary/30 bg-black text-primary focus:ring-offset-black focus:ring-primary"
                         type="checkbox" />
                     <span class="text-sm">Tiempo de calidad (Papá)</span>
@@ -248,7 +249,7 @@
     <!-- Bottom Save Action -->
     <footer
         class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/95 to-transparent z-40 pb-24">
-        <button
+        <button id="save-journal-btn"
             class="w-full bg-primary text-black heading-font text-2xl py-4 rounded-xl shadow-[0_10px_30px_rgba(245,196,0,0.3)] hover:scale-[1.02] active:scale-95 transition-transform flex items-center justify-center gap-2">
             <span class="material-icons">save</span>
             GUARDAR REGISTRO
@@ -282,6 +283,119 @@
             <span class="text-[10px] uppercase mt-1 tracking-tighter font-bold">Bitácora</span>
         </button>
     </nav>
+    <script>
+        // --- Journal Persistence Controller ---
+        const saveBtn = document.getElementById('save-journal-btn');
+        const dateHeader = document.getElementById('current-date-header');
+
+        const inputs = {
+            gratitude1: document.getElementById('gratitude-1'),
+            gratitude2: document.getElementById('gratitude-2'),
+            gratitude3: document.getElementById('gratitude-3'),
+            needAction: document.getElementById('need-action'),
+            needAttitude: document.getElementById('need-attitude'),
+            needThought: document.getElementById('need-thought'),
+            summaryGeneral: document.getElementById('summary-general'),
+            summaryPositive: document.getElementById('summary-positive'),
+            summaryNegative: document.getElementById('summary-negative'),
+            summaryVictory: document.getElementById('summary-victory'),
+            summaryTomorrow: document.getElementById('summary-tomorrow')
+        };
+
+        const moodButtons = document.querySelectorAll('#mood-selector button');
+        const objectiveCheckboxes = document.querySelectorAll('#objectives-list input[type="checkbox"]');
+
+        let selectedMood = null;
+
+        function init() {
+            // Update Date Display
+            const now = new Date();
+            const options = { weekday: 'long', day: 'numeric', month: 'long' };
+            dateHeader.innerText = now.toLocaleDateString('es-ES', options).replace(/^\w/, (c) => c.toUpperCase());
+
+            loadTodayData();
+
+            // Mood Selector Logic
+            moodButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    moodButtons.forEach(b => b.classList.add('grayscale'));
+                    btn.classList.remove('grayscale');
+                    btn.classList.add('drop-shadow-[0_0_8px_rgba(245,196,0,0.4)]');
+                    selectedMood = btn.dataset.mood;
+                });
+            });
+
+            // Objective Label Strike-through Logic
+            objectiveCheckboxes.forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const span = cb.nextElementSibling;
+                    if (cb.checked) {
+                        span.classList.add('line-through', 'opacity-50');
+                    } else {
+                        span.classList.remove('line-through', 'opacity-50');
+                    }
+                });
+            });
+
+            saveBtn.addEventListener('click', saveTodayData);
+        }
+
+        function loadTodayData() {
+            const todayKey = new Date().toISOString().split('T')[0];
+            const savedData = JSON.parse(localStorage.getItem(`tr3c3_journal_${todayKey}`) || '{}');
+
+            if (savedData.mood) {
+                selectedMood = savedData.mood;
+                const moodBtn = document.querySelector(`[data-mood="${selectedMood}"]`);
+                if (moodBtn) {
+                    moodBtn.classList.remove('grayscale');
+                    moodBtn.classList.add('drop-shadow-[0_0_8px_rgba(245,196,0,0.4)]');
+                }
+            }
+
+            for (const key in inputs) {
+                if (savedData[key]) inputs[key].value = savedData[key];
+            }
+
+            if (savedData.objectives) {
+                objectiveCheckboxes.forEach(cb => {
+                    cb.checked = !!savedData.objectives[cb.dataset.id];
+                    if (cb.checked) cb.nextElementSibling.classList.add('line-through', 'opacity-50');
+                });
+            }
+        }
+
+        function saveTodayData() {
+            const todayKey = new Date().toISOString().split('T')[0];
+
+            const dataToSave = {
+                mood: selectedMood,
+                objectives: {}
+            };
+
+            for (const key in inputs) {
+                dataToSave[key] = inputs[key].value;
+            }
+
+            objectiveCheckboxes.forEach(cb => {
+                dataToSave.objectives[cb.dataset.id] = cb.checked;
+            });
+
+            localStorage.setItem(`tr3c3_journal_${todayKey}`, JSON.stringify(dataToSave));
+
+            // Visual feedback
+            const originalHTML = saveBtn.innerHTML;
+            saveBtn.innerHTML = '<span class="material-icons">check_circle</span> GUARDADO!';
+            saveBtn.classList.replace('bg-primary', 'bg-green-600');
+
+            setTimeout(() => {
+                saveBtn.innerHTML = originalHTML;
+                saveBtn.classList.replace('bg-green-600', 'bg-primary');
+            }, 2000);
+        }
+
+        init();
+    </script>
 </body>
 
 </html>

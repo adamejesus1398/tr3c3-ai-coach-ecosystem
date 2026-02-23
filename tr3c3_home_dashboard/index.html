@@ -66,25 +66,25 @@
                     class="text-primary">3</span>
             </div>
             <div class="text-right">
-                <p class="text-xs uppercase tracking-tighter opacity-60">Lunes, 22 de Mayo</p>
-                <h1 class="text-3xl font-heading text-cream">Buenas noches</h1>
+                <p id="current-date-text" class="text-xs uppercase tracking-tighter opacity-60">Cargando fecha...</p>
+                <h1 id="greeting-text" class="text-3xl font-heading text-cream">Hola</h1>
             </div>
         </div>
         <!-- Key Stat Cards -->
         <div class="grid grid-cols-3 gap-3 mb-8">
-            <div
-                class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center">
-                <span class="text-2xl font-bold leading-none">8/10</span>
+            <div onclick="window.location.href='../tr3c3_habits_tracker/index.html'"
+                class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center cursor-pointer active:scale-95 transition-transform">
+                <span id="habit-progress-count" class="text-2xl font-bold leading-none">0/8</span>
                 <span class="text-[9px] font-bold uppercase mt-1">Hábitos</span>
             </div>
             <div
                 class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center border-x border-black/10">
-                <span class="text-2xl font-bold leading-none">15</span>
+                <span id="streak-count" class="text-2xl font-bold leading-none">15</span>
                 <span class="text-[9px] font-bold uppercase mt-1">Racha</span>
             </div>
-            <div
-                class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center">
-                <span class="text-2xl font-bold leading-none">3</span>
+            <div onclick="window.location.href='../tr3c3_daily_journal_writing/index.html'"
+                class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center cursor-pointer active:scale-95 transition-transform">
+                <span id="victory-count" class="text-2xl font-bold leading-none">0</span>
                 <span class="text-[9px] font-bold uppercase mt-1">Victorias</span>
             </div>
         </div>
@@ -208,11 +208,56 @@
             <span class="text-[10px] uppercase mt-1 tracking-tighter text-primary/60">Bitácora</span>
         </button>
     </nav>
-    <!-- Map context image placeholder (not visible but required) -->
-    <div class="hidden">
-        <img data-alt="A glowing abstract map of a city at night" data-location="Night City"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5k2CoIpBUBenihhw31B6hdkdB9AYZjStBKpDStquXKR2JrunvcgKLBRr34-o3lYRjV_eGVJpogdMew6JJ5RFZw_XW56QQ4uI6ylKgwQE27MgaULvB1HV4p4hRp-BkqWesfjowHegYzK3ePeyzp12FIWRFuiVRb0bAPNgPgNlbW3PsquUT2Bf5gZp0Gpo2PH3JisS8ogNHg7TicgCVktocqF3nMklCLnWor8oJuRON7IUp6gO_WHw6CBEVwmZD4UciM5BtKF5hm_o" />
-    </div>
+    <script>
+        // --- Home Data Sync Controller ---
+        const dateText = document.getElementById('current-date-text');
+        const greetingText = document.getElementById('greeting-text');
+        const habitCount = document.getElementById('habit-progress-count');
+        const victoryCount = document.getElementById('victory-count');
+        const streakCount = document.getElementById('streak-count');
+
+        function init() {
+            updateDateAndGreeting();
+            syncEcosystemData();
+        }
+
+        function updateDateAndGreeting() {
+            const now = new Date();
+            const options = { weekday: 'long', day: 'numeric', month: 'long' };
+            dateText.innerText = now.toLocaleDateString('es-ES', options).replace(/^\w/, (c) => c.toUpperCase());
+
+            const hour = now.getHours();
+            if (hour >= 5 && hour < 12) greetingText.innerText = "Buenos días";
+            else if (hour >= 12 && hour < 20) greetingText.innerText = "Buenas tardes";
+            else greetingText.innerText = "Buenas noches";
+        }
+
+        function syncEcosystemData() {
+            // 1. Sync Habits Progress
+            const habitsState = JSON.parse(localStorage.getItem('tr3c3_habits_state') || '{}');
+            const completedHabits = habitsState.checked ? habitsState.checked.length : 0;
+            habitCount.innerText = `${completedHabits}/8`;
+
+            // 2. Sync Journal Victories
+            const todayKey = new Date().toISOString().split('T')[0];
+            const journalData = JSON.parse(localStorage.getItem(`tr3c3_journal_${todayKey}`) || '{}');
+
+            // Count objective completions as victories for feedback
+            let victories = 0;
+            if (journalData.objectives) {
+                victories = Object.values(journalData.objectives).filter(v => v === true).length;
+            }
+            victoryCount.innerText = victories;
+
+            // 3. Sync Streak (Static for now, but could be calculated)
+            streakCount.innerText = "15";
+        }
+
+        // Refresh data when window gains focus (user comes back from another app)
+        window.addEventListener('focus', syncEcosystemData);
+
+        init();
+    </script>
 </body>
 
 </html>
