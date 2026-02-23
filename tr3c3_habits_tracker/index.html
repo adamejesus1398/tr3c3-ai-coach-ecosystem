@@ -70,13 +70,15 @@
                     <p class="font-dmsans text-sm text-cream/60">DISCIPLINA DIARIA</p>
                 </div>
                 <div class="text-right">
-                    <span class="font-bebas text-3xl text-primary">5/8</span>
+                    <span id="progress-text" class="font-bebas text-3xl text-primary">0/8</span>
                     <p class="font-dmsans text-[10px] uppercase tracking-widest text-cream/40">Completados</p>
                 </div>
             </div>
             <!-- Progress Bar -->
             <div class="w-full bg-primary/20 h-2 rounded-full mb-8">
-                <div class="bg-primary h-full rounded-full w-[62.5%] shadow-[0_0_10px_rgba(245,196,0,0.5)]"></div>
+                <div id="progress-bar"
+                    class="bg-primary h-full rounded-full w-0 transition-all duration-500 shadow-[0_0_10px_rgba(245,196,0,0.5)]">
+                </div>
             </div>
             <!-- Weekly View -->
             <div class="flex justify-between items-center mb-2">
@@ -127,10 +129,11 @@
                 </div>
                 <div class="space-y-4">
                     <!-- Habit Row 1 -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                    <div data-habit-id="1"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5 cursor-pointer hover:bg-neutral-gold/40 transition-all group">
                         <div
-                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
-                            <span class="material-icons-round text-lg">check</span>
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/40 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
                         </div>
                         <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">ORACIÓN Y GRATITUD</h3>
@@ -142,10 +145,11 @@
                         </div>
                     </div>
                     <!-- Habit Row 2 -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                    <div data-habit-id="2"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5 cursor-pointer hover:bg-neutral-gold/40 transition-all group">
                         <div
-                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
-                            <span class="material-icons-round text-lg">check</span>
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/40 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
                         </div>
                         <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">HIDRATACIÓN + VITAMINAS</h3>
@@ -167,10 +171,11 @@
                 </div>
                 <div class="space-y-4">
                     <!-- Habit Row 3 -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                    <div data-habit-id="3"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5 cursor-pointer hover:bg-neutral-gold/40 transition-all group">
                         <div
-                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
-                            <span class="material-icons-round text-lg">check</span>
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/40 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
                         </div>
                         <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">PLANIFICACIÓN FINANCIERA</h3>
@@ -182,10 +187,11 @@
                         </div>
                     </div>
                     <!-- Habit Row 4 -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                    <div data-habit-id="4"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5 cursor-pointer hover:bg-neutral-gold/40 transition-all group">
                         <div
-                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
-                            <span class="material-icons-round text-lg">check</span>
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/40 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
                         </div>
                         <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">TIEMPO CON MI HIJO</h3>
@@ -197,10 +203,11 @@
                         </div>
                     </div>
                     <!-- Habit Row 5 -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                    <div data-habit-id="5"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5 cursor-pointer hover:bg-neutral-gold/40 transition-all group">
                         <div
-                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
-                            <span class="material-icons-round text-lg">check</span>
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/40 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
                         </div>
                         <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">ESTUDIO / IA COACHING</h3>
@@ -222,9 +229,13 @@
                 </div>
                 <div class="space-y-4">
                     <!-- Habit Row 6 (Pending) -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10">
-                        <div class="w-7 h-7 rounded-full border-2 border-cream/20"></div>
-                        <div class="flex-grow opacity-60">
+                    <div data-habit-id="6"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10 cursor-pointer hover:bg-neutral-gold/20 transition-all group">
+                        <div
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/20 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
+                        </div>
+                        <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">LECTURA ESPIRITUAL</h3>
                             <p class="font-dmsans text-xs text-cream/60">15 min de lectura reflexiva</p>
                         </div>
@@ -234,9 +245,13 @@
                         </div>
                     </div>
                     <!-- Habit Row 7 (Pending) -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10">
-                        <div class="w-7 h-7 rounded-full border-2 border-cream/20"></div>
-                        <div class="flex-grow opacity-60">
+                    <div data-habit-id="7"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10 cursor-pointer hover:bg-neutral-gold/20 transition-all group">
+                        <div
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/20 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
+                        </div>
+                        <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">POST-SHIFT REVIEW</h3>
                             <p class="font-dmsans text-xs text-cream/60">Check de tareas y notas de mañana</p>
                         </div>
@@ -246,9 +261,13 @@
                         </div>
                     </div>
                     <!-- Habit Row 8 (Pending) -->
-                    <div class="flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10">
-                        <div class="w-7 h-7 rounded-full border-2 border-cream/20"></div>
-                        <div class="flex-grow opacity-60">
+                    <div data-habit-id="8"
+                        class="habit-row flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10 cursor-pointer hover:bg-neutral-gold/20 transition-all group">
+                        <div
+                            class="check-circle w-7 h-7 rounded-full border-2 border-primary/20 flex items-center justify-center transition-all">
+                            <span class="material-icons-round text-lg hidden">check</span>
+                        </div>
+                        <div class="flex-grow">
                             <h3 class="font-bebas text-xl leading-tight tracking-wide">STRETCHING FINAL</h3>
                             <p class="font-dmsans text-xs text-cream/60">Movilidad para descansar mejor</p>
                         </div>
@@ -362,6 +381,88 @@
         <!-- Home Indicator spacing for iOS -->
         <div class="h-8 w-full"></div>
     </div>
+
+    <script>
+        // TR3C3 Habits Tracker Logic
+        const STORAGE_KEY = 'tr3c3_habits_state';
+
+        // Initialize state from LocalStorage
+        let habitsState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
+        // Check if day has changed to auto-reset? (Optional enhancement)
+        const today = new Date().toISOString().split('T')[0];
+        if (habitsState.date !== today) {
+            // It's a new day! We could archive previous and reset, 
+            // but for now let's just keep today's state or reset.
+            // habitsState = { date: today, checked: [] };
+        }
+        if (!habitsState.checked) habitsState.checked = [];
+
+        function updateUI() {
+            const rows = document.querySelectorAll('.habit-row');
+            const total = rows.length;
+            let completedCount = 0;
+
+            rows.forEach(row => {
+                const habitId = row.getAttribute('data-habit-id');
+                const isChecked = habitsState.checked.includes(habitId);
+                const circle = row.querySelector('.check-circle');
+                const icon = circle.querySelector('span');
+                const content = row.querySelector('.flex-grow');
+
+                if (isChecked) {
+                    completedCount++;
+                    circle.classList.add('bg-primary', 'border-primary');
+                    circle.classList.remove('bg-neutral-gold/10', 'border-primary/40', 'border-primary/20');
+                    icon.classList.remove('hidden');
+                    circle.classList.add('text-background-dark');
+                    row.classList.add('bg-neutral-gold/30', 'border-cream/5');
+                    row.classList.remove('bg-neutral-gold/10', 'border-cream/10');
+                    content.classList.remove('opacity-60');
+                } else {
+                    circle.classList.remove('bg-primary', 'border-primary', 'text-background-dark');
+                    circle.classList.add('border-primary/40');
+                    icon.classList.add('hidden');
+                    row.classList.remove('bg-neutral-gold/30', 'border-cream/5');
+                    row.classList.add('bg-neutral-gold/10', 'border-cream/10');
+                    content.classList.add('opacity-60');
+                }
+            });
+
+            // Update Progress Bar & Text
+            const progressText = document.getElementById('progress-text');
+            const progressBar = document.getElementById('progress-bar');
+
+            progressText.innerText = `${completedCount}/${total}`;
+            const percentage = (completedCount / total) * 100;
+            progressBar.style.width = `${percentage}%`;
+
+            // Save to LocalStorage
+            habitsState.date = today;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(habitsState));
+        }
+
+        function toggleHabit(habitId) {
+            const index = habitsState.checked.indexOf(habitId);
+            if (index > -1) {
+                habitsState.checked.splice(index, 1);
+            } else {
+                habitsState.checked.push(habitId);
+            }
+            updateUI();
+        }
+
+        // Add event listeners
+        document.querySelectorAll('.habit-row').forEach(row => {
+            row.addEventListener('click', () => {
+                const id = row.getAttribute('data-habit-id');
+                toggleHabit(id);
+            });
+        });
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', updateUI);
+    </script>
 </body>
 
 </html>
