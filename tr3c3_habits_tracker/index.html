@@ -81,40 +81,41 @@
                 </div>
             </div>
             <!-- Weekly View -->
-            <div class="flex justify-between items-center mb-2">
-                <div class="flex flex-col items-center gap-2">
+            <div id="weekly-view" class="flex justify-between items-center mb-2">
+                <div data-day="1" class="day-cell flex flex-col items-center gap-2">
                     <span class="text-[10px] font-bold text-cream/40">L</span>
-                    <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-background-dark">
-                        <span class="material-icons-round text-sm">check</span>
+                    <div class="circle w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center">
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
+                <div data-day="2" class="day-cell flex flex-col items-center gap-2">
                     <span class="text-[10px] font-bold text-cream/40">M</span>
-                    <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-background-dark">
-                        <span class="material-icons-round text-sm">check</span>
+                    <div class="circle w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center">
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
-                    <span class="text-[10px] font-bold text-cream/40 text-primary">X</span>
-                    <div class="w-9 h-9 rounded-full border-2 border-primary flex items-center justify-center">
-                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                <div data-day="3" class="day-cell flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40">X</span>
+                    <div class="circle w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center">
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
+                <div data-day="4" class="day-cell flex flex-col items-center gap-2">
                     <span class="text-[10px] font-bold text-cream/40">J</span>
-                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                    <div class="circle w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center">
+                    </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
+                <div data-day="5" class="day-cell flex flex-col items-center gap-2">
                     <span class="text-[10px] font-bold text-cream/40">V</span>
-                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                    <div class="circle w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center">
+                    </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
+                <div data-day="6" class="day-cell flex flex-col items-center gap-2">
                     <span class="text-[10px] font-bold text-cream/40">S</span>
-                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                    <div class="circle w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center">
+                    </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
+                <div data-day="0" class="day-cell flex flex-col items-center gap-2">
                     <span class="text-[10px] font-bold text-cream/40">D</span>
-                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                    <div class="circle w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center">
+                    </div>
                 </div>
             </div>
         </header>
@@ -436,6 +437,25 @@
             progressText.innerText = `${completedCount}/${total}`;
             const percentage = (completedCount / total) * 100;
             progressBar.style.width = `${percentage}%`;
+
+            // Update Weekly View
+            const dayOfWeek = new Date().getDay(); // 0 (Sun) to 6 (Sat)
+            document.querySelectorAll('.day-cell').forEach(cell => {
+                const dayNum = parseInt(cell.getAttribute('data-day'));
+                const label = cell.querySelector('span');
+                const circle = cell.querySelector('.circle');
+
+                // Clear previous active states
+                label.classList.remove('text-primary');
+                circle.classList.remove('border-2', 'border-primary');
+                circle.innerHTML = '';
+
+                if (dayNum === dayOfWeek) {
+                    label.classList.add('text-primary');
+                    circle.classList.add('border-2', 'border-primary');
+                    circle.innerHTML = '<div class="w-2 h-2 bg-primary rounded-full"></div>';
+                }
+            });
 
             // Save to LocalStorage
             habitsState.date = today;
