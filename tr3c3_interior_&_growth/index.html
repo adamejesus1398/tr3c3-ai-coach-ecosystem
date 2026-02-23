@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TR3C3 Interior &amp; Growth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5c400",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#1a1a17",
+                        "cream": "#f8f8f5",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["DM Serif Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-cream min-h-screen">
+<!-- Header / Navigation Bar (iOS Style) -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10 px-6 py-4 flex items-center justify-between">
+<button class="text-primary">
+<span class="material-icons">chevron_left</span>
+</button>
+<h1 class="text-lg font-semibold tracking-tight uppercase tracking-widest text-primary">Interior &amp; Fe</h1>
+<button class="text-primary">
+<span class="material-icons">more_horiz</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-6 pt-8 pb-32 space-y-10">
+<!-- Explanatory Hero Card -->
+<section class="relative overflow-hidden rounded-xl border border-primary/20 bg-surface-dark p-6 shadow-2xl">
+<div class="relative z-10">
+<h2 class="text-primary font-bold text-sm uppercase tracking-wider mb-2">Tu Santuario Interior</h2>
+<p class="text-cream/80 text-sm leading-relaxed">
+                    Diseñado para el hombre que lidera en la noche y guía a su familia en el día. Encuentra aquí el silencio necesario para fortalecer tu espíritu y tu disciplina.
+                </p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-icons text-8xl text-primary">auto_awesome</span>
+</div>
+</section>
+<!-- Reflexión del Día (Serif Italic) -->
+<section class="text-center py-4">
+<span class="text-primary/60 text-xs uppercase tracking-[0.3em] font-medium mb-4 block">Reflexión del día</span>
+<blockquote class="font-serif italic text-2xl md:text-3xl text-cream px-4">
+                "El hombre que se domina a sí mismo en el silencio de la madrugada, domina su destino bajo el sol."
+            </blockquote>
+</section>
+<!-- Prácticas Diarias Checklist -->
+<section class="space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-primary font-bold text-sm uppercase tracking-widest">Prácticas Diarias</h3>
+<span class="text-xs text-primary/40">0/5 Completado</span>
+</div>
+<div class="space-y-3">
+<!-- Checklist Items -->
+<label class="flex items-center p-4 bg-surface-dark rounded-xl border border-primary/5 cursor-pointer group active:scale-[0.98] transition-transform">
+<input class="w-5 h-5 rounded border-primary/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="ml-4 text-sm font-medium text-cream/90 group-hover:text-primary transition-colors">Oración de Laudes (Al despertar)</span>
+</label>
+<label class="flex items-center p-4 bg-surface-dark rounded-xl border border-primary/5 cursor-pointer group active:scale-[0.98] transition-transform">
+<input class="w-5 h-5 rounded border-primary/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="ml-4 text-sm font-medium text-cream/90 group-hover:text-primary transition-colors">15 min de Lectura Espiritual</span>
+</label>
+<label class="flex items-center p-4 bg-surface-dark rounded-xl border border-primary/5 cursor-pointer group active:scale-[0.98] transition-transform">
+<input class="w-5 h-5 rounded border-primary/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="ml-4 text-sm font-medium text-cream/90 group-hover:text-primary transition-colors">Examen de Conciencia (Antes del turno)</span>
+</label>
+<label class="flex items-center p-4 bg-surface-dark rounded-xl border border-primary/5 cursor-pointer group active:scale-[0.98] transition-transform">
+<input class="w-5 h-5 rounded border-primary/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="ml-4 text-sm font-medium text-cream/90 group-hover:text-primary transition-colors">Silencio contemplativo (Cuna del bebé)</span>
+</label>
+<label class="flex items-center p-4 bg-surface-dark rounded-xl border border-primary/5 cursor-pointer group active:scale-[0.98] transition-transform">
+<input class="w-5 h-5 rounded border-primary/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="ml-4 text-sm font-medium text-cream/90 group-hover:text-primary transition-colors">Acto de Servicio desinteresado</span>
+</label>
+</div>
+</section>
+<!-- Trading Checklist (Psychology) -->
+<section class="space-y-4 pt-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-icons text-primary text-sm">psychology</span>
+<h3 class="text-primary font-bold text-sm uppercase tracking-widest">Trading Psychology</h3>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-start gap-3 p-3 bg-primary/5 rounded-lg border-l-2 border-primary">
+<span class="text-xs font-bold text-primary pt-0.5">01</span>
+<p class="text-xs text-cream/70 uppercase">Espera el setup: Paciencia es rentabilidad.</p>
+</div>
+<div class="flex items-start gap-3 p-3 bg-primary/5 rounded-lg border-l-2 border-primary">
+<span class="text-xs font-bold text-primary pt-0.5">02</span>
+<p class="text-xs text-cream/70 uppercase">Gestiona el riesgo antes que el beneficio.</p>
+</div>
+<div class="flex items-start gap-3 p-3 bg-primary/5 rounded-lg border-l-2 border-primary">
+<span class="text-xs font-bold text-primary pt-0.5">03</span>
+<p class="text-xs text-cream/70 uppercase">Desapego total del resultado inmediato.</p>
+</div>
+<div class="flex items-start gap-3 p-3 bg-primary/5 rounded-lg border-l-2 border-primary">
+<span class="text-xs font-bold text-primary pt-0.5">04</span>
+<p class="text-xs text-cream/70 uppercase">El mercado no es personal; es flujo.</p>
+</div>
+<div class="flex items-start gap-3 p-3 bg-primary/5 rounded-lg border-l-2 border-primary">
+<span class="text-xs font-bold text-primary pt-0.5">05</span>
+<p class="text-xs text-cream/70 uppercase">Cierra la pantalla si el plan se ejecutó.</p>
+</div>
+</div>
+</section>
+<!-- Gratitude Section -->
+<section class="space-y-6 pt-6">
+<h3 class="text-primary font-bold text-sm uppercase tracking-widest text-center">Hoy agradezco por...</h3>
+<div class="space-y-6">
+<div class="relative">
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary/30 focus:border-primary focus:ring-0 text-sm py-2 px-0 text-cream placeholder:text-cream/20 italic" placeholder="Primer motivo de gratitud..." type="text"/>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary/30 focus:border-primary focus:ring-0 text-sm py-2 px-0 text-cream placeholder:text-cream/20 italic" placeholder="Segundo motivo de gratitud..." type="text"/>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary/30 focus:border-primary focus:ring-0 text-sm py-2 px-0 text-cream placeholder:text-cream/20 italic" placeholder="Tercer motivo de gratitud..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Afirmación del día -->
+<section class="pt-10 pb-6">
+<div class="bg-gradient-to-b from-primary/20 to-transparent p-8 rounded-3xl border border-primary/30 text-center space-y-6">
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Afirmación del día</span>
+<p class="text-primary text-3xl font-serif italic leading-tight">
+                    "Soy el arquitecto de mi calma y el protector de mi familia."
+                </p>
+<button class="w-full py-4 bg-primary text-background-dark font-bold rounded-xl active:scale-[0.95] transition-transform text-sm tracking-widest">
+                    SIGUIENTE
+                </button>
+</div>
+</section>
+<!-- Educational Accordions -->
+<section class="space-y-2">
+<div class="border-b border-primary/10">
+<button class="w-full py-5 flex justify-between items-center group">
+<span class="text-sm font-medium text-cream group-hover:text-primary transition-colors">Estoicismo en la Paternidad</span>
+<span class="material-icons text-primary/40 text-sm group-hover:text-primary">expand_more</span>
+</button>
+</div>
+<div class="border-b border-primary/10">
+<button class="w-full py-5 flex justify-between items-center group">
+<span class="text-sm font-medium text-cream group-hover:text-primary transition-colors">Mindfulness para el Turno de Noche</span>
+<span class="material-icons text-primary/40 text-sm group-hover:text-primary">expand_more</span>
+</button>
+</div>
+<div class="border-b border-primary/10">
+<button class="w-full py-5 flex justify-between items-center group">
+<span class="text-sm font-medium text-cream group-hover:text-primary transition-colors">Doctrina Social y Crecimiento</span>
+<span class="material-icons text-primary/40 text-sm group-hover:text-primary">expand_more</span>
+</button>
+</div>
+<div class="border-b border-primary/10">
+<button class="w-full py-5 flex justify-between items-center group">
+<span class="text-sm font-medium text-cream group-hover:text-primary transition-colors">Fortaleza Mental (Navy Seals)</span>
+<span class="material-icons text-primary/40 text-sm group-hover:text-primary">expand_more</span>
+</button>
+</div>
+</section>
+<div class="flex justify-center pt-8">
+<img alt="Spiritual Symbol" class="w-12 h-12 opacity-40 grayscale contrast-125" data-alt="Minimalist gold geometric sacred symbol on black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-VaG6zjlRv9351Bymvx--1yqku0O1In19XqKVUsc6-5BqLivHlLXNuYX2HulXMcKrkYPfwe8MFWEqOlYwyMCe-c4kcxE3BY52PnXycOnfh1EOhB8s6Pc3vfTIAZ7VTUOI6XXIWJKjcyPriJZd6jsgcjY1IT09Fza7O3CqShUUnGM5ByChhSAhr2tURgGHhJko8ViicPmHmkHIuqlHFz3MVPkNVeSCCwgu2CWLzRlmD4ra-sJK7KXeXZp9WLvx4b9D_InVjNaHahU"/>
+</div>
+</main>
+<!-- Navigation Bar (Floating iOS style) -->
+<nav class="fixed bottom-6 left-6 right-6 h-16 bg-surface-dark/90 ios-blur rounded-2xl border border-primary/20 flex items-center justify-around px-4 shadow-2xl">
+<button class="flex flex-col items-center gap-1 text-primary/40">
+<span class="material-icons text-xl">home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary/40">
+<span class="material-icons text-xl">insights</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons text-2xl">auto_awesome</span>
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary/40">
+<span class="material-icons text-xl">payments</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary/40">
+<span class="material-icons text-xl">person</span>
+</button>
+</nav>
+</body></html>

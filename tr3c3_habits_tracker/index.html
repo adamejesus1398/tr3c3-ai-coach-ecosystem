@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TR3C3 Habits Tracker</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:wght@400;500;700&amp;family=Inter:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5c400",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#000000",
+                        "cream": "#f5f0e8",
+                        "neutral-gold": "#231f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "bebas": ["Bebas Neue", "cursive"],
+                        "dmsans": ["DM Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f0e8;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-cream font-display">
+    <div class="max-w-md mx-auto min-h-screen flex flex-col pb-10">
+        <!-- Header Section -->
+        <header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md px-6 pt-8 pb-4">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <h1 class="font-bebas text-4xl tracking-wider text-primary">TR3C3</h1>
+                    <p class="font-dmsans text-sm text-cream/60">DISCIPLINA DIARIA</p>
+                </div>
+                <div class="text-right">
+                    <span class="font-bebas text-3xl text-primary">5/8</span>
+                    <p class="font-dmsans text-[10px] uppercase tracking-widest text-cream/40">Completados</p>
+                </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-primary/20 h-2 rounded-full mb-8">
+                <div class="bg-primary h-full rounded-full w-[62.5%] shadow-[0_0_10px_rgba(245,196,0,0.5)]"></div>
+            </div>
+            <!-- Weekly View -->
+            <div class="flex justify-between items-center mb-2">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40">L</span>
+                    <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-background-dark">
+                        <span class="material-icons-round text-sm">check</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40">M</span>
+                    <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-background-dark">
+                        <span class="material-icons-round text-sm">check</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40 text-primary">X</span>
+                    <div class="w-9 h-9 rounded-full border-2 border-primary flex items-center justify-center">
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40">J</span>
+                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40">V</span>
+                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40">S</span>
+                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] font-bold text-cream/40">D</span>
+                    <div class="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center"></div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Habits List -->
+        <main class="px-6 flex-grow">
+            <!-- Block 1: AL DESPERTAR -->
+            <section class="mb-8">
+                <div class="flex items-center gap-3 mb-4 opacity-80">
+                    <span class="material-icons-round text-primary text-sm">wb_sunny</span>
+                    <h2 class="font-bebas text-lg tracking-widest uppercase">AL DESPERTAR 15:00H</h2>
+                    <div class="flex-grow h-[1px] bg-primary/20"></div>
+                </div>
+                <div class="space-y-4">
+                    <!-- Habit Row 1 -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                        <div
+                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
+                            <span class="material-icons-round text-lg">check</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">ORACIÓN Y GRATITUD</h3>
+                            <p class="font-dmsans text-xs text-cream/60">Conexión espiritual para iniciar el día</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons-round text-primary text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold text-primary">12</span>
+                        </div>
+                    </div>
+                    <!-- Habit Row 2 -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                        <div
+                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
+                            <span class="material-icons-round text-lg">check</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">HIDRATACIÓN + VITAMINAS</h3>
+                            <p class="font-dmsans text-xs text-cream/60">500ml de agua y suplementos</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons-round text-primary text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold text-primary">45</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Block 2: BLOQUE PRODUCTIVO -->
+            <section class="mb-8">
+                <div class="flex items-center gap-3 mb-4 opacity-80">
+                    <span class="material-icons-round text-primary text-sm">psychology</span>
+                    <h2 class="font-bebas text-lg tracking-widest uppercase">BLOQUE PRODUCTIVO 15:30H</h2>
+                    <div class="flex-grow h-[1px] bg-primary/20"></div>
+                </div>
+                <div class="space-y-4">
+                    <!-- Habit Row 3 -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                        <div
+                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
+                            <span class="material-icons-round text-lg">check</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">PLANIFICACIÓN FINANCIERA</h3>
+                            <p class="font-dmsans text-xs text-cream/60">Revisar gastos y presupuesto familiar</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons-round text-primary text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold text-primary">8</span>
+                        </div>
+                    </div>
+                    <!-- Habit Row 4 -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                        <div
+                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
+                            <span class="material-icons-round text-lg">check</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">TIEMPO CON MI HIJO</h3>
+                            <p class="font-dmsans text-xs text-cream/60">Presencia total y juego activo</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons-round text-primary text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold text-primary">30</span>
+                        </div>
+                    </div>
+                    <!-- Habit Row 5 -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/30 p-4 rounded-xl border border-cream/5">
+                        <div
+                            class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-background-dark">
+                            <span class="material-icons-round text-lg">check</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">ESTUDIO / IA COACHING</h3>
+                            <p class="font-dmsans text-xs text-cream/60">Mejora de habilidades técnicas</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons-round text-primary text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold text-primary">15</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Block 3: EN EL TRABAJO -->
+            <section class="mb-8">
+                <div class="flex items-center gap-3 mb-4 opacity-80">
+                    <span class="material-icons-round text-primary text-sm">nights_stay</span>
+                    <h2 class="font-bebas text-lg tracking-widest uppercase">EN EL TRABAJO 22:00H</h2>
+                    <div class="flex-grow h-[1px] bg-primary/20"></div>
+                </div>
+                <div class="space-y-4">
+                    <!-- Habit Row 6 (Pending) -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10">
+                        <div class="w-7 h-7 rounded-full border-2 border-cream/20"></div>
+                        <div class="flex-grow opacity-60">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">LECTURA ESPIRITUAL</h3>
+                            <p class="font-dmsans text-xs text-cream/60">15 min de lectura reflexiva</p>
+                        </div>
+                        <div class="flex flex-col items-center opacity-40">
+                            <span class="material-icons-round text-cream text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold">5</span>
+                        </div>
+                    </div>
+                    <!-- Habit Row 7 (Pending) -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10">
+                        <div class="w-7 h-7 rounded-full border-2 border-cream/20"></div>
+                        <div class="flex-grow opacity-60">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">POST-SHIFT REVIEW</h3>
+                            <p class="font-dmsans text-xs text-cream/60">Check de tareas y notas de mañana</p>
+                        </div>
+                        <div class="flex flex-col items-center opacity-40">
+                            <span class="material-icons-round text-cream text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold">21</span>
+                        </div>
+                    </div>
+                    <!-- Habit Row 8 (Pending) -->
+                    <div class="flex items-center gap-4 bg-neutral-gold/10 p-4 rounded-xl border border-cream/10">
+                        <div class="w-7 h-7 rounded-full border-2 border-cream/20"></div>
+                        <div class="flex-grow opacity-60">
+                            <h3 class="font-bebas text-xl leading-tight tracking-wide">STRETCHING FINAL</h3>
+                            <p class="font-dmsans text-xs text-cream/60">Movilidad para descansar mejor</p>
+                        </div>
+                        <div class="flex flex-col items-center opacity-40">
+                            <span class="material-icons-round text-cream text-sm">local_fire_department</span>
+                            <span class="text-[10px] font-bold">7</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- History Section -->
+            <section class="mt-4 mb-10">
+                <div class="bg-neutral-gold/40 border border-primary/20 rounded-xl p-5 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="font-bebas text-2xl tracking-widest text-primary">MI HISTORIAL</h2>
+                        <span class="font-dmsans text-[10px] text-cream/40 uppercase tracking-widest">Últimos 30
+                            días</span>
+                    </div>
+                    <div class="space-y-3 h-64 overflow-y-auto custom-scrollbar pr-1">
+                        <!-- Perfect Day -->
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8">01 OCT</span>
+                            <div class="flex-grow h-3 bg-primary rounded-full relative overflow-hidden">
+                                <div class="absolute inset-0 bg-white/10"></div>
+                            </div>
+                            <span class="font-bebas text-sm text-primary w-6">8/8</span>
+                        </div>
+                        <!-- Progress Days -->
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8">30 SEP</span>
+                            <div class="flex-grow h-3 bg-primary/20 rounded-full overflow-hidden">
+                                <div class="bg-primary h-full w-[87.5%]"></div>
+                            </div>
+                            <span class="font-bebas text-sm text-cream/60 w-6">7/8</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8">29 SEP</span>
+                            <div class="flex-grow h-3 bg-primary/20 rounded-full overflow-hidden">
+                                <div class="bg-primary h-full w-[75%]"></div>
+                            </div>
+                            <span class="font-bebas text-sm text-cream/60 w-6">6/8</span>
+                        </div>
+                        <!-- Perfect Day Glow -->
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8 text-primary">28 SEP</span>
+                            <div
+                                class="flex-grow h-3 bg-primary rounded-full relative shadow-[0_0_8px_rgba(245,196,0,0.3)]">
+                                <div class="absolute inset-0 bg-gradient-to-r from-primary via-white/20 to-primary">
+                                </div>
+                            </div>
+                            <span class="font-bebas text-sm text-primary w-6">8/8</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8">27 SEP</span>
+                            <div class="flex-grow h-3 bg-primary/20 rounded-full overflow-hidden">
+                                <div class="bg-primary h-full w-[62.5%]"></div>
+                            </div>
+                            <span class="font-bebas text-sm text-cream/60 w-6">5/8</span>
+                        </div>
+                        <!-- Repeat pattern for visual log... -->
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8">26 SEP</span>
+                            <div class="flex-grow h-3 bg-primary rounded-full relative"></div>
+                            <span class="font-bebas text-sm text-primary w-6">8/8</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8">25 SEP</span>
+                            <div class="flex-grow h-3 bg-primary/20 rounded-full overflow-hidden">
+                                <div class="bg-primary h-full w-[50%]"></div>
+                            </div>
+                            <span class="font-bebas text-sm text-cream/60 w-6">4/8</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-dmsans text-[10px] text-cream/40 w-8">24 SEP</span>
+                            <div class="flex-grow h-3 bg-primary rounded-full relative"></div>
+                            <span class="font-bebas text-sm text-primary w-6">8/8</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Fixed Bottom Nav (iOS style) -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-background-dark/95 backdrop-blur-md border-t border-cream/10 pb-6 pt-3 px-6 flex justify-between items-center z-50">
+            <button onclick="window.location.href='../tr3c3_home_dashboard/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">🏠</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter">Inicio</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_habits_tracker/index.html'"
+                class="flex flex-col items-center text-primary">
+                <span class="text-xl">✅</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter">Hábitos</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_finance_dashboard/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">💰</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter">Finanzas</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_ai_coach_chat/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">🤖</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter">Coach</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_daily_journal_writing/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">📓</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter">Bitácora</span>
+            </button>
+        </nav>
+        <!-- Home Indicator spacing for iOS -->
+        <div class="h-8 w-full"></div>
+    </div>
+</body>
+
+</html>

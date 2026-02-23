@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5c400",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#000000",
+                        "expense": "#e74c3c",
+                        "income": "#5aaa7a",
+                        "card-bg": "#121210",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "header": ["Bebas Neue", "cursive"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <title>TR3C3 Finance Dashboard</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .ios-safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-dark text-white selection:bg-primary/30">
+    <div class="max-w-md mx-auto min-h-screen flex flex-col pb-10">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md px-6 pt-8 pb-4 flex justify-between items-end">
+            <div class="flex items-center gap-3">
+                <button onclick="window.location.href='../tr3c3_home_dashboard/index.html'"
+                    class="text-primary hover:text-white transition-colors">
+                    <span class="material-icons">arrow_back</span>
+                </button>
+                <div>
+                    <h1 class="font-header text-4xl tracking-wider text-primary">TR3C3 FINANCE</h1>
+                    <p class="text-[10px] text-primary/60 tracking-[0.2em] font-medium uppercase">Financial Discipline &
+                        Growth</p>
+                </div>
+            </div>
+            <div class="w-10 h-10 rounded-full border border-primary/20 overflow-hidden">
+                <img alt="Profile" class="w-full h-full object-cover"
+                    data-alt="Close up portrait of a man looking confident"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuADYDDoc2SCIMEv5z3oXLz7TRt__GbKFSM0FNdYKRZSgakjPL83u9Q6zPJOK0Xo6kH02-4pDQj06oZ2CAwJMgBBFhUsOrPND5rqcdwtcivBMM3Q-ZnXmJR10a9Gj2LzGlxFhOlQntMeL6ZivYKZjl1BpWS0_sF2u8n_AQeZbw9XgLl889m5Tn1b7MQIag_bl9mbO27sF4FzeZT0O6G5UzaptE-3ryQ7KDjNcT-7GTjNk8ItrG8--Fp8EV3GSKv0jtrFjR2p_y9mJCE" />
+            </div>
+        </header>
+        <!-- Top Stats Section -->
+        <section class="px-6 mt-6 space-y-4">
+            <!-- Savings Card -->
+            <div class="bg-card-bg border border-primary/10 p-5 rounded-xl">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-[11px] font-bold tracking-widest text-primary/70 uppercase">AHORRADO ESTE
+                        MES</span>
+                    <span class="text-primary font-bold">€1,240 / €2,000</span>
+                </div>
+                <div class="w-full bg-primary/10 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-primary h-full rounded-full" style="width: 62%"></div>
+                </div>
+            </div>
+            <!-- Expense / Income Grid -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-card-bg border border-expense/10 p-4 rounded-xl">
+                    <span
+                        class="text-[10px] font-bold tracking-widest text-expense/70 uppercase block mb-1">GASTOS</span>
+                    <span class="text-2xl font-bold text-expense tracking-tight">€2,845.50</span>
+                </div>
+                <div class="bg-card-bg border border-income/10 p-4 rounded-xl">
+                    <span
+                        class="text-[10px] font-bold tracking-widest text-income/70 uppercase block mb-1">INGRESOS</span>
+                    <span class="text-2xl font-bold text-income tracking-tight">€4,085.20</span>
+                </div>
+            </div>
+        </section>
+        <!-- Add Movement Form -->
+        <section class="px-6 mt-8">
+            <h2 class="text-sm font-bold tracking-widest text-white/50 uppercase mb-4">Añadir Movimiento</h2>
+            <div class="bg-card-bg border border-white/5 p-6 rounded-xl">
+                <div class="relative mb-6">
+                    <span class="absolute left-0 top-1/2 -translate-y-1/2 text-2xl font-bold text-primary">€</span>
+                    <input
+                        class="w-full bg-transparent border-none focus:ring-0 text-4xl font-bold pl-8 text-white placeholder-white/20"
+                        placeholder="0.00" type="number" />
+                </div>
+                <div class="grid grid-cols-4 gap-2">
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-primary/20 bg-primary/5 hover:bg-primary/20 transition-all">
+                        <span class="material-icons text-primary text-sm mb-1">home</span>
+                        <span class="text-[10px] font-medium">Casa</span>
+                    </button>
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-white/10 transition-all">
+                        <span class="material-icons text-white/40 text-sm mb-1">restaurant</span>
+                        <span class="text-[10px] font-medium">Comida</span>
+                    </button>
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-white/10 transition-all">
+                        <span class="material-icons text-white/40 text-sm mb-1">directions_car</span>
+                        <span class="text-[10px] font-medium">Transp</span>
+                    </button>
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-white/10 transition-all">
+                        <span class="material-icons text-white/40 text-sm mb-1">child_care</span>
+                        <span class="text-[10px] font-medium">Bebé</span>
+                    </button>
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-white/10 transition-all">
+                        <span class="material-icons text-white/40 text-sm mb-1">sports_esports</span>
+                        <span class="text-[10px] font-medium">Ocio</span>
+                    </button>
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-white/10 transition-all">
+                        <span class="material-icons text-white/40 text-sm mb-1">trending_up</span>
+                        <span class="text-[10px] font-medium">Invers</span>
+                    </button>
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-white/10 transition-all">
+                        <span class="material-icons text-white/40 text-sm mb-1">medical_services</span>
+                        <span class="text-[10px] font-medium">Salud</span>
+                    </button>
+                    <button
+                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-white/10 transition-all">
+                        <span class="material-icons text-white/40 text-sm mb-1">more_horiz</span>
+                        <span class="text-[10px] font-medium">Otros</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Mentor Tips Carousel -->
+        <section class="mt-8">
+            <div class="px-6 mb-4 flex justify-between items-center">
+                <h2 class="text-sm font-bold tracking-widest text-white/50 uppercase">Consejos de Mentores</h2>
+                <span class="material-icons text-primary text-sm">auto_awesome</span>
+            </div>
+            <div class="flex overflow-x-auto gap-4 px-6 pb-2 custom-scrollbar">
+                <!-- Kiyosaki -->
+                <div class="flex-none w-72 bg-card-bg border border-white/5 p-4 rounded-xl flex gap-4">
+                    <img alt="Robert Kiyosaki" class="w-12 h-12 rounded-full border border-primary/20 grayscale"
+                        data-alt="Formal headshot of an experienced financial mentor"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2XNp2ul9dWapjGNBrsZ2w6Jg8s6w3QBMCQyQlPSRhcxp9nUzeyd9yLWscNeBMv4IdRzgYOYuBqKtj6umgxlGm_jgq29eSy8u7PG08SDacgzxPuofCD9K7bXgjV1OB64m4JXEodx7_S9ayHIvSn9YkumbLfHimHxo80Y5psh67XRU8nAjW-yNR_Nc_nYn75CkTots14aJXOGbq2K05ippBYfKfaVSWZ_v4zdDq1R7l3CVDvm3Wbha1tUDtskbMTjgykPbZDaf9Ul0" />
+                    <div>
+                        <h4 class="text-xs font-bold text-primary mb-1">Robert Kiyosaki</h4>
+                        <p class="text-[11px] leading-relaxed text-white/70 italic">"Los activos ponen dinero en tu
+                            bolsillo. Tus gastos de bebé ahora son tu mayor inversión."</p>
+                    </div>
+                </div>
+                <!-- Ramit Sethi -->
+                <div class="flex-none w-72 bg-card-bg border border-white/5 p-4 rounded-xl flex gap-4">
+                    <img alt="Ramit Sethi" class="w-12 h-12 rounded-full border border-primary/20 grayscale"
+                        data-alt="Professional portrait of a modern finance expert"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQeRObi1zaG3fftvDwEve6DYM-5_0bc7PL_Pl0bMtlyK1YLa8KD0gkbhifazlrl6t8_h3HVZ6x0SQZFntUrDZLTPbpQb_OQ3NkRdpteUd8aVifWhjYQBVlL0-zPJlNjAGozDZFBSuhs6fwEoCDciq7gZKc8rMsBGPXso0NQ4VxLtxJoNl_bfC7H30yxzpjylJodp-u2MHZ8U1aPMDkr9WUR0JqWKNGraMraYe7Le2zGR4plGcvOSig3NhQgzdTcYkogfVb9uoIF2A" />
+                    <div>
+                        <h4 class="text-xs font-bold text-primary mb-1">Ramit Sethi</h4>
+                        <p class="text-[11px] leading-relaxed text-white/70 italic">"Gasta extravagantemente en las
+                            cosas que amas, pero recorta sin piedad en lo demás."</p>
+                    </div>
+                </div>
+                <!-- Morgan Housel -->
+                <div class="flex-none w-72 bg-card-bg border border-white/5 p-4 rounded-xl flex gap-4">
+                    <img alt="Morgan Housel" class="w-12 h-12 rounded-full border border-primary/20 grayscale"
+                        data-alt="Portrait of a contemplative financial author"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuASS3dKJNeUy7AhJkfbUTV_cpjvqea-oaHzW6zXxv2b7BQgq8Qu8z9anVR4T5FiiglyhmJrtEs3dDYej2olMfpavmbp4uVNAVMsQEpY54EIuxQJxVrfK9t7GG7LFFC8J09u97KVmFT33M7PtHpzddv3hYo-AbjuitKpkzc1Z5Mdv-iSzoAoGJCF6X59dJ6Gz-qnrUlMkqyktJ1rbNy2V0lDKb4J5kI4TE1nUW5SPar75zXdkAbIRlrij6DZ-SAVQ7D2B_KTRhKosqI" />
+                    <div>
+                        <h4 class="text-xs font-bold text-primary mb-1">Morgan Housel</h4>
+                        <p class="text-[11px] leading-relaxed text-white/70 italic">"Ahorrar es la brecha entre tu ego y
+                            tus ingresos. Mantén el ego bajo, padre."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recent History -->
+        <section class="px-6 mt-8 flex-grow">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-sm font-bold tracking-widest text-white/50 uppercase tracking-tighter">HISTORIAL
+                    RECIENTE</h2>
+                <span class="text-[10px] text-white/30 uppercase font-medium">Octubre 2023</span>
+            </div>
+            <div class="space-y-3">
+                <!-- Transaction Item (Repeated) -->
+                <div class="flex items-center justify-between p-3 bg-card-bg/50 border-b border-white/5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-expense/10 flex items-center justify-center">
+                            <span class="material-icons text-expense text-sm">shopping_cart</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Compra Semanal - Lidl</p>
+                            <p class="text-[10px] text-white/40">Hoy, 14:30 · Comida</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-expense">-€84.20</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-card-bg/50 border-b border-white/5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-income/10 flex items-center justify-center">
+                            <span class="material-icons text-income text-sm">payments</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Nómina Nocturnidad</p>
+                            <p class="text-[10px] text-white/40">Ayer, 09:15 · Ingresos</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-income">+€1,850.00</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-card-bg/50 border-b border-white/5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-expense/10 flex items-center justify-center">
+                            <span class="material-icons text-expense text-sm">child_friendly</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Pañales &amp; Toallitas</p>
+                            <p class="text-[10px] text-white/40">22 Oct · Bebé</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-expense">-€45.90</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-card-bg/50 border-b border-white/5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-expense/10 flex items-center justify-center">
+                            <span class="material-icons text-expense text-sm">home</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Alquiler Octubre</p>
+                            <p class="text-[10px] text-white/40">20 Oct · Casa</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-expense">-€850.00</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-card-bg/50 border-b border-white/5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-expense/10 flex items-center justify-center">
+                            <span class="material-icons text-expense text-sm">bolt</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Factura Luz</p>
+                            <p class="text-[10px] text-white/40">18 Oct · Casa</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-expense">-€112.30</span>
+                </div>
+                <!-- Spacer for more items... -->
+                <div class="py-4 text-center">
+                    <button
+                        class="text-[10px] font-bold text-primary uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity">Ver
+                        todos los movimientos</button>
+                </div>
+            </div>
+        </section>
+        <!-- Bottom Actions -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-background-dark/95 backdrop-blur-md border-t border-white/10 pb-6 pt-3 px-6 flex justify-between items-center z-50 text-white">
+            <button onclick="window.location.href='../tr3c3_home_dashboard/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">🏠</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter text-cream">Inicio</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_habits_tracker/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">✅</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter text-cream">Hábitos</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_finance_dashboard/index.html'"
+                class="flex flex-col items-center text-primary">
+                <span class="text-xl">💰</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter">Finanzas</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_ai_coach_chat/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">🤖</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter text-cream">Coach</span>
+            </button>
+            <button onclick="window.location.href='../tr3c3_daily_journal_writing/index.html'"
+                class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-xl">📓</span>
+                <span class="text-[10px] uppercase mt-1 tracking-tighter text-cream">Bitácora</span>
+            </button>
+        </nav>
+        <footer class="px-6 mt-10 mb-8 ios-safe-bottom">
+            <button
+                class="w-full bg-primary py-4 rounded-xl flex items-center justify-center gap-3 group active:scale-[0.98] transition-all">
+                <span class="material-icons text-background-dark font-bold">archive</span>
+                <span class="font-header text-xl tracking-wider text-background-dark">CERRAR MES Y ARCHIVAR</span>
+            </button>
+            <p class="text-center text-[10px] text-white/20 mt-4 uppercase tracking-[0.3em]">Disciplina es libertad ·
+                TR3C3</p>
+        </footer>
+    </div>
+    <!-- Background Decoration -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+        <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[20%] -right-[10%] w-[30%] h-[30%] bg-primary/5 blur-[100px] rounded-full"></div>
+    </div>
+</body>
+
+</html>

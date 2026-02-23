@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5c400",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#000000",
+                        "cream": "#f5f0e8",
+                        "neutral-gold": "#231f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "heading": ["Bebas Neue", "cursive"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #f5f0e8;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .bebas {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 0.05em;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-cream min-h-screen">
+<!-- iOS Status Bar Spacer -->
+<div class="h-12 w-full"></div>
+<!-- Header Section -->
+<header class="px-6 py-4 flex justify-between items-end border-b border-primary/10">
+<div>
+<p class="text-[10px] uppercase tracking-[0.3em] text-primary/60 font-medium">Personal Discipline System</p>
+<h1 class="bebas text-4xl text-primary leading-none">TR3C3 Routine</h1>
+</div>
+<div class="pb-1">
+<span class="material-icons text-primary">insights</span>
+</div>
+</header>
+<main class="px-4 py-6 space-y-8 pb-24">
+<!-- Daily Routine Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 px-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<h2 class="text-xs uppercase tracking-[0.2em] text-primary/80 font-semibold">Daily Blocks</h2>
+</div>
+<div class="space-y-3">
+<!-- Block 1: Llegada a casa -->
+<div class="bg-neutral-gold/30 border border-primary/10 rounded-xl overflow-hidden">
+<button class="w-full flex justify-between items-center p-5 text-left group">
+<span class="bebas text-2xl text-primary group-hover:text-primary/80 transition-colors">Llegada a casa</span>
+<span class="material-icons text-primary text-2xl">expand_more</span>
+</button>
+<!-- Expanded Content (Default state for first item mockup) -->
+<div class="px-5 pb-5 space-y-4">
+<div class="flex justify-between items-center text-sm border-b border-primary/5 pb-2">
+<span class="text-cream/80"><span class="text-primary mr-2">01.</span> Silencio total &amp; Ducha</span>
+<span class="text-primary/60 tabular-nums">15 min</span>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-primary/5 pb-2">
+<span class="text-cream/80"><span class="text-primary mr-2">02.</span> Journaling Nocturno</span>
+<span class="text-primary/60 tabular-nums">10 min</span>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-primary/5 pb-2">
+<span class="text-cream/80"><span class="text-primary mr-2">03.</span> Preparación suplementos</span>
+<span class="text-primary/60 tabular-nums">05 min</span>
+</div>
+</div>
+</div>
+<!-- Block 2: Ritual despertar -->
+<div class="bg-neutral-gold/30 border border-primary/10 rounded-xl overflow-hidden">
+<button class="w-full flex justify-between items-center p-5 text-left">
+<span class="bebas text-2xl text-primary">Ritual despertar</span>
+<span class="material-icons text-primary text-2xl">chevron_right</span>
+</button>
+</div>
+<!-- Block 3: Bloque productivo -->
+<div class="bg-neutral-gold/30 border border-primary/10 rounded-xl overflow-hidden">
+<button class="w-full flex justify-between items-center p-5 text-left">
+<span class="bebas text-2xl text-primary">Bloque productivo</span>
+<span class="material-icons text-primary text-2xl">chevron_right</span>
+</button>
+</div>
+<!-- Block 4: Tarde en familia -->
+<div class="bg-neutral-gold/30 border border-primary/10 rounded-xl overflow-hidden">
+<button class="w-full flex justify-between items-center p-5 text-left">
+<span class="bebas text-2xl text-primary">Tarde en familia</span>
+<span class="material-icons text-primary text-2xl">chevron_right</span>
+</button>
+</div>
+<!-- Block 5: Turno de trabajo -->
+<div class="bg-neutral-gold/30 border border-primary/10 rounded-xl overflow-hidden">
+<button class="w-full flex justify-between items-center p-5 text-left">
+<span class="bebas text-2xl text-primary">Turno de trabajo</span>
+<span class="material-icons text-primary text-2xl">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Weekly Cleaning Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 px-2">
+<div class="w-1.5 h-1.5 rounded-full border border-primary"></div>
+<h2 class="text-xs uppercase tracking-[0.2em] text-primary/80 font-semibold">Weekly Maintenance</h2>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<!-- Cleaning Block 1 -->
+<div class="bg-neutral-gold/20 border border-primary/5 rounded-lg overflow-hidden">
+<button class="w-full flex justify-between items-center px-4 py-3 text-left">
+<span class="bebas text-xl text-primary/90">Baños</span>
+<span class="material-icons text-primary/50 text-xl">expand_more</span>
+</button>
+<!-- Small inner list example -->
+<div class="px-4 pb-3 space-y-2">
+<div class="flex justify-between items-center text-[12px] text-cream/60">
+<span>Desinfección profunda</span>
+<span class="tabular-nums">20m</span>
+</div>
+</div>
+</div>
+<!-- Cleaning Block 2 -->
+<div class="bg-neutral-gold/20 border border-primary/5 rounded-lg overflow-hidden">
+<button class="w-full flex justify-between items-center px-4 py-3 text-left">
+<span class="bebas text-xl text-primary/90">Cocina</span>
+<span class="material-icons text-primary/50 text-xl">chevron_right</span>
+</button>
+</div>
+<!-- Cleaning Block 3 -->
+<div class="bg-neutral-gold/20 border border-primary/5 rounded-lg overflow-hidden">
+<button class="w-full flex justify-between items-center px-4 py-3 text-left">
+<span class="bebas text-xl text-primary/90">Salón</span>
+<span class="material-icons text-primary/50 text-xl">chevron_right</span>
+</button>
+</div>
+<!-- Cleaning Block 4 -->
+<div class="bg-neutral-gold/20 border border-primary/5 rounded-lg overflow-hidden">
+<button class="w-full flex justify-between items-center px-4 py-3 text-left">
+<span class="bebas text-xl text-primary/90">Habitaciones</span>
+<span class="material-icons text-primary/50 text-xl">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Mockup -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-md border-t border-primary/20 px-8 py-4">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-icons text-cream">home</span>
+<span class="text-[9px] uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">event_note</span>
+<span class="text-[9px] uppercase tracking-wider font-bold">Routine</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-icons text-cream">payments</span>
+<span class="text-[9px] uppercase tracking-wider">Finance</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-icons text-cream">psychology</span>
+<span class="text-[9px] uppercase tracking-wider">AI Coach</span>
+</div>
+</div>
+</nav>
+<!-- Visual Accent Element -->
+<div class="fixed top-0 right-0 w-32 h-32 bg-primary/5 blur-[80px] -z-10"></div>
+<div class="fixed bottom-0 left-0 w-48 h-48 bg-primary/5 blur-[100px] -z-10"></div>
+</body></html>

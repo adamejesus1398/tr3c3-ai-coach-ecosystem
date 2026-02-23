@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TR3C3 Roadmap 1K</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5c400",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0c0b05",
+                        "rich-black": "#000000",
+                        "cream": "#F5F5DC"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "heading": ["Bebas Neue", "cursive"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #f5c400 0%, #ffeb99 50%, #f5c400 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border: 1px solid rgba(245, 196, 0, 0.3);
+        }
+        .phase-number {
+            font-family: 'Bebas Neue', cursive;
+            line-height: 0.8;
+            opacity: 0.15;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 5rem;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-cream selection:bg-primary selection:text-black">
+<!-- Top Status Bar (Mockup for iOS) -->
+<div class="fixed top-0 w-full h-12 flex justify-between items-center px-6 z-50 bg-background-dark/80 ios-blur">
+<span class="text-xs font-semibold tracking-tighter">9:41</span>
+<div class="flex gap-1 items-center">
+<span class="material-icons text-xs">signal_cellular_alt</span>
+<span class="material-icons text-xs">wifi</span>
+<span class="material-icons text-xs">battery_full</span>
+</div>
+</div>
+<!-- Header Navigation -->
+<header class="pt-16 pb-4 px-6 sticky top-0 bg-background-dark/95 z-40">
+<div class="flex items-center justify-between mb-2">
+<span class="text-primary font-bold tracking-widest text-xs">TR3C3 SYSTEM</span>
+<span class="material-icons text-primary">account_circle</span>
+</div>
+<h1 class="font-heading text-4xl tracking-wider text-white">ROADMAP 1K</h1>
+</header>
+<main class="px-6 pb-24">
+<!-- Goal Banner -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/20 to-rich-black gold-border p-6 mb-8 mt-2">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<img class="w-32 h-32 object-cover rounded-full" data-alt="Abstract gold circular pattern texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpg1uYudDf507ry-f4DUi1bWH1BFTAHjaHAcRj_mvxpF8p5EDB9CKzL6e1uttOLNyCrwHYv-A3NsocmvG1owAIszZW3LgknludNXfUgblmF9Z0myvdOM6URQV7juf4u_GDpW68rHR7tgSNFoQaI_awG6YJZeETwiddtyhhc2-ViP1E5nfyZD8fzKz8DQ3oXQLRY67ALHPErsVV0H1-qXadgvGiE80v9ZjTfIiBYnd1-oI0D15e5PqNG7eljcJjo2PsR6f57kobf7M"/>
+</div>
+<p class="text-[10px] font-bold text-primary tracking-[0.3em] uppercase mb-1">Objetivo Actual</p>
+<h2 class="text-4xl font-heading gold-gradient tracking-wide">1.000€ EN 30 DÍAS</h2>
+<div class="mt-4 w-full bg-primary/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[35%] rounded-full shadow-[0_0_10px_rgba(245,196,0,0.5)]"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-primary/60 font-medium">
+<span>DÍA 11 DE 30</span>
+<span>35% COMPLETADO</span>
+</div>
+</section>
+<!-- Phase Accordions -->
+<div class="space-y-4">
+<!-- Phase 1: Cimientos -->
+<details class="group gold-border rounded-xl bg-rich-black" open="">
+<summary class="flex items-center justify-between p-5 cursor-pointer list-none relative overflow-hidden">
+<div class="z-10">
+<p class="text-[10px] text-primary/60 font-bold tracking-widest uppercase mb-1">Días 1-7</p>
+<h3 class="font-heading text-2xl text-white group-open:text-primary transition-colors">Cimientos</h3>
+</div>
+<span class="phase-number text-primary group-open:opacity-30">1</span>
+<span class="material-icons text-primary transition-transform group-open:rotate-180 z-10">expand_more</span>
+</summary>
+<div class="p-5 pt-0 space-y-4">
+<div class="border-t border-primary/10 pt-4">
+<div class="flex gap-3 mb-4">
+<span class="material-icons text-primary text-sm mt-0.5">check_circle</span>
+<p class="text-sm"><span class="text-primary font-bold">AJUSTAR</span> ciclo de sueño para turno de noche.</p>
+</div>
+<div class="flex gap-3 mb-4">
+<span class="material-icons text-primary text-sm mt-0.5">check_circle</span>
+<p class="text-sm"><span class="text-primary font-bold">DEFINIR</span> nicho de mercado para coaching IA.</p>
+</div>
+<div class="flex gap-3">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">ESTABLECER</span> ritual de oración y presencia.</p>
+</div>
+</div>
+</div>
+</details>
+<!-- Phase 2: Visibilidad -->
+<details class="group gold-border rounded-xl bg-rich-black">
+<summary class="flex items-center justify-between p-5 cursor-pointer list-none relative overflow-hidden">
+<div class="z-10">
+<p class="text-[10px] text-primary/60 font-bold tracking-widest uppercase mb-1">Días 8-15</p>
+<h3 class="font-heading text-2xl text-white group-open:text-primary transition-colors">Visibilidad</h3>
+</div>
+<span class="phase-number text-primary">2</span>
+<span class="material-icons text-primary transition-transform group-open:rotate-180 z-10">expand_more</span>
+</summary>
+<div class="p-5 pt-0 space-y-4">
+<div class="border-t border-primary/10 pt-4">
+<div class="flex gap-3 mb-4">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">CONFIGURAR</span> perfil de LinkedIn optimizado con IA.</p>
+</div>
+<div class="flex gap-3 mb-4">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">CREAR</span> 5 piezas de contenido pilar sobre eficiencia.</p>
+</div>
+<div class="flex gap-3">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">LANZAR</span> primer lead magnet automatizado.</p>
+</div>
+</div>
+</div>
+</details>
+<!-- Phase 3: Venta -->
+<details class="group gold-border rounded-xl bg-rich-black">
+<summary class="flex items-center justify-between p-5 cursor-pointer list-none relative overflow-hidden">
+<div class="z-10">
+<p class="text-[10px] text-primary/60 font-bold tracking-widest uppercase mb-1">Días 16-24</p>
+<h3 class="font-heading text-2xl text-white group-open:text-primary transition-colors">Venta</h3>
+</div>
+<span class="phase-number text-primary">3</span>
+<span class="material-icons text-primary transition-transform group-open:rotate-180 z-10">expand_more</span>
+</summary>
+<div class="p-5 pt-0 space-y-4">
+<div class="border-t border-primary/10 pt-4">
+<div class="flex gap-3 mb-4">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">CERRAR</span> las primeras 2 llamadas de descubrimiento.</p>
+</div>
+<div class="flex gap-3 mb-4">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">PRESENTAR</span> oferta de High-Ticket (500€+).</p>
+</div>
+</div>
+</div>
+</details>
+<!-- Phase 4: Escalar -->
+<details class="group gold-border rounded-xl bg-rich-black">
+<summary class="flex items-center justify-between p-5 cursor-pointer list-none relative overflow-hidden">
+<div class="z-10">
+<p class="text-[10px] text-primary/60 font-bold tracking-widest uppercase mb-1">Días 25-30</p>
+<h3 class="font-heading text-2xl text-white group-open:text-primary transition-colors">Escalar</h3>
+</div>
+<span class="phase-number text-primary">4</span>
+<span class="material-icons text-primary transition-transform group-open:rotate-180 z-10">expand_more</span>
+</summary>
+<div class="p-5 pt-0 space-y-4">
+<div class="border-t border-primary/10 pt-4">
+<div class="flex gap-3 mb-4">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">AUDITAR</span> finanzas familiares y separar capital.</p>
+</div>
+<div class="flex gap-3">
+<span class="material-icons text-primary/30 text-sm mt-0.5">radio_button_unchecked</span>
+<p class="text-sm"><span class="text-primary font-bold">REPLICAR</span> sistema para el siguiente ciclo.</p>
+</div>
+</div>
+</div>
+</details>
+</div>
+<!-- Motivational Quote Section -->
+<div class="mt-12 text-center">
+<p class="italic text-primary/40 font-serif text-sm px-8">"El trabajo duro vence al talento cuando el talento no trabaja duro."</p>
+<div class="mt-4 flex justify-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary/20"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/20"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Bar -->
+<nav class="fixed bottom-0 w-full bg-background-dark/95 border-t border-primary/10 ios-blur px-8 pt-3 pb-8 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1">
+<span class="material-icons text-primary/40">dashboard</span>
+<span class="text-[10px] text-primary/40 font-bold">HOY</span>
+</button>
+<button class="flex flex-col items-center gap-1">
+<span class="material-icons text-primary">map</span>
+<span class="text-[10px] text-primary font-bold">ROADMAP</span>
+</button>
+<button class="bg-primary p-3 rounded-full -mt-10 shadow-lg shadow-primary/20">
+<span class="material-icons text-black">add</span>
+</button>
+<button class="flex flex-col items-center gap-1">
+<span class="material-icons text-primary/40">account_balance_wallet</span>
+<span class="text-[10px] text-primary/40 font-bold">FINANZAS</span>
+</button>
+<button class="flex flex-col items-center gap-1">
+<span class="material-icons text-primary/40">psychology</span>
+<span class="text-[10px] text-primary/40 font-bold">COACH IA</span>
+</button>
+</nav>
+</body></html>

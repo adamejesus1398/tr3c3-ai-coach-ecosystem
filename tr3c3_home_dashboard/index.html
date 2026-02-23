@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Serif+Display:ital@1&amp;family=Inter:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5c400",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#000000", // Forced pure black as per user request
+                        "cream": "#f5f0e8",
+                        "dark-neutral": "#1a1a1a"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "heading": ["Bebas Neue", "cursive"],
+                        "quote": ["DM Serif Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f0e8;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .custom-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-dark text-cream max-w-md mx-auto min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="pt-8 px-6 pb-4">
+        <div class="flex justify-between items-end mb-6">
+            <div class="text-4xl font-heading tracking-widest">
+                T<span class="text-primary">3</span>R<span class="text-primary">3</span>C<span
+                    class="text-primary">3</span>
+            </div>
+            <div class="text-right">
+                <p class="text-xs uppercase tracking-tighter opacity-60">Lunes, 22 de Mayo</p>
+                <h1 class="text-3xl font-heading text-cream">Buenas noches</h1>
+            </div>
+        </div>
+        <!-- Key Stat Cards -->
+        <div class="grid grid-cols-3 gap-3 mb-8">
+            <div
+                class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center">
+                <span class="text-2xl font-bold leading-none">8/10</span>
+                <span class="text-[9px] font-bold uppercase mt-1">Hábitos</span>
+            </div>
+            <div
+                class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center border-x border-black/10">
+                <span class="text-2xl font-bold leading-none">15</span>
+                <span class="text-[9px] font-bold uppercase mt-1">Racha</span>
+            </div>
+            <div
+                class="bg-primary rounded-xl p-3 flex flex-col items-center justify-center text-background-dark text-center">
+                <span class="text-2xl font-bold leading-none">3</span>
+                <span class="text-[9px] font-bold uppercase mt-1">Victorias</span>
+            </div>
+        </div>
+        <!-- Quote Section -->
+        <div class="border-l-2 border-primary/40 pl-4 py-1 italic">
+            <p class="font-quote text-xl leading-snug text-cream/90">
+                "La disciplina es el puente entre las metas y los logros del hombre de fe."
+            </p>
+        </div>
+    </header>
+    <!-- Main Content: Visual Agenda -->
+    <main class="flex-grow px-6 pb-32 custom-scroll overflow-y-auto">
+        <div class="flex items-center justify-between mb-4 mt-4">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-primary">Agenda Visual</h2>
+            <span
+                class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20 uppercase">Turno
+                Noche</span>
+        </div>
+        <!-- Timeline -->
+        <div class="relative space-y-4">
+            <!-- Work Block -->
+            <div class="flex gap-4">
+                <div class="w-12 text-[10px] font-bold opacity-40 pt-1">22:00</div>
+                <div class="flex-grow bg-dark-neutral border border-primary/30 rounded-lg p-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-sm font-semibold">Inicio de Jornada</h3>
+                        <span class="text-xs">💼</span>
+                    </div>
+                    <p class="text-xs opacity-60 mt-1">Enfoque total, bloque de 4 horas.</p>
+                </div>
+            </div>
+            <!-- Focus Block -->
+            <div class="flex gap-4">
+                <div class="w-12 text-[10px] font-bold opacity-40 pt-1">02:00</div>
+                <div class="flex-grow bg-primary/10 border border-primary/20 rounded-lg p-3">
+                    <div class="flex justify-between items-start text-primary">
+                        <h3 class="text-sm font-semibold">Descanso &amp; Oración</h3>
+                        <span class="text-xs">🙏</span>
+                    </div>
+                    <p class="text-xs opacity-80 mt-1 text-primary/80">Recarga espiritual y física.</p>
+                </div>
+            </div>
+            <!-- End Shift -->
+            <div onclick="window.location.href='../tr3c3_daily_journal_writing/index.html'"
+                class="flex gap-4 cursor-pointer hover:bg-white/5 transition-colors p-1 rounded-lg">
+                <div class="w-12 text-[10px] font-bold opacity-40 pt-1">06:00</div>
+                <div class="flex-grow bg-dark-neutral border border-white/10 rounded-lg p-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-sm font-semibold">Cierre y Reporte</h3>
+                        <span class="text-xs">📝</span>
+                    </div>
+                    <p class="text-xs opacity-60 mt-1">Revisión de finanzas y diario.</p>
+                </div>
+            </div>
+            <!-- Family Block -->
+            <div class="flex gap-4">
+                <div class="w-12 text-[10px] font-bold opacity-40 pt-1">07:30</div>
+                <div class="flex-grow bg-primary rounded-lg p-3 text-background-dark">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-sm font-bold">Tiempo de Papá</h3>
+                        <span class="text-xs">👶</span>
+                    </div>
+                    <p class="text-xs font-medium mt-1">Desayuno y conexión familiar.</p>
+                </div>
+            </div>
+            <!-- Sleep Block -->
+            <div class="flex gap-4 opacity-50">
+                <div class="w-12 text-[10px] font-bold opacity-40 pt-1">09:00</div>
+                <div class="flex-grow border border-dashed border-white/20 rounded-lg p-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-sm font-semibold">Descanso Profundo</h3>
+                        <span class="text-xs">🌙</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AI Coach Quick Action -->
+        <div class="mt-8 bg-dark-neutral rounded-xl p-4 border border-primary/20 relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-xs font-bold uppercase text-primary mb-1">AI Coach</h3>
+                <p class="text-sm">"Has mantenido el ritmo, ¿listo para el reporte de hoy?"</p>
+                <button onclick="window.location.href='../tr3c3_ai_coach_chat/index.html'"
+                    class="mt-3 text-[10px] font-bold uppercase bg-primary text-background-dark px-4 py-1.5 rounded-full">Hablar
+                    con Coach</button>
+            </div>
+            <div class="absolute -right-4 -bottom-4 opacity-10">
+                <svg fill="currentColor" height="100" viewbox="0 0 24 24" width="100">
+                    <path
+                        d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm1 10h-2v-2h2v2zm0-4h-2V7h2v3z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+    </main>
+    <!-- Bottom Navigation Grid -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-background-dark/95 backdrop-blur-md border-t border-white/10 pb-6 pt-3 px-6 flex justify-between items-center z-50">
+        <button onclick="window.location.href='../tr3c3_home_dashboard/index.html'"
+            class="flex flex-col items-center text-primary">
+            <span class="text-xl">🏠</span>
+            <span class="text-[10px] uppercase mt-1 tracking-tighter">Inicio</span>
+        </button>
+        <button onclick="window.location.href='../tr3c3_habits_tracker/index.html'"
+            class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+            <span class="text-xl">✅</span>
+            <span class="text-[10px] uppercase mt-1 tracking-tighter">Hábitos</span>
+        </button>
+        <button onclick="window.location.href='../tr3c3_finance_dashboard/index.html'"
+            class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+            <span class="text-xl">💰</span>
+            <span class="text-[10px] uppercase mt-1 tracking-tighter">Finanzas</span>
+        </button>
+        <button onclick="window.location.href='../tr3c3_ai_coach_chat/index.html'"
+            class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+            <span class="text-xl">🤖</span>
+            <span class="text-[10px] uppercase mt-1 tracking-tighter">Coach</span>
+        </button>
+        <button onclick="window.location.href='../tr3c3_daily_journal_writing/index.html'"
+            class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+            <span class="text-xl">📓</span>
+            <span class="text-[10px] uppercase mt-1 tracking-tighter">Bitácora</span>
+        </button>
+    </nav>
+    <!-- Map context image placeholder (not visible but required) -->
+    <div class="hidden">
+        <img data-alt="A glowing abstract map of a city at night" data-location="Night City"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5k2CoIpBUBenihhw31B6hdkdB9AYZjStBKpDStquXKR2JrunvcgKLBRr34-o3lYRjV_eGVJpogdMew6JJ5RFZw_XW56QQ4uI6ylKgwQE27MgaULvB1HV4p4hRp-BkqWesfjowHegYzK3ePeyzp12FIWRFuiVRb0bAPNgPgNlbW3PsquUT2Bf5gZp0Gpo2PH3JisS8ogNHg7TicgCVktocqF3nMklCLnWor8oJuRON7IUp6gO_WHw6CBEVwmZD4UciM5BtKF5hm_o" />
+    </div>
+</body>
+
+</html>
